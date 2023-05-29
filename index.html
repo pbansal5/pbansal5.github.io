@@ -79,7 +79,7 @@
               <!-- <tr>
                 <td style="padding:20px;width:100%;vertical-align:middle"> -->
                   <li><p>
-                    <a href="https://arxiv.org/abs/2210.10636">
+                    <a href="https://arxiv.org/abs/2305.16863">
                     <papertitle>Controlling Learned Effects to Reduce Spurious Correlations in Text Classifiers</papertitle>
                   </a>
                   <br>
@@ -88,20 +88,19 @@
                   <a href="https://scholar.google.co.in/citations?user=CXgQufgAAAAJ&hl=en">Amit Sharma</a>
                   <br><em>ACL</em>, 2023
                   <br>
-                  <a href="#" onclick="$('#improving_abstract').toggle();return false;">abstract</a>
+                  <a href="#" onclick="$('#controlling_abstract').toggle();return false;">abstract</a>
                   /
-                  <a target="_blank" href="https://arxiv.org/abs/2210.10636">paper</a>
+                  <a target="_blank" href="https://arxiv.org/abs/2305.16863">paper</a>
                   <!-- /
                   <a target="_blank" href="data/mixture_poster.pdf">Poster</a> -->
                   /
-                  <a target="_blank" href="data/itvreg.pptx.pdf">slides</a>
+                  <!-- <a target="_blank" href="data/itvreg.pptx.pdf">slides</a> -->
                   <!-- /
                   <a target="_blank" href="https://underline.io/lecture/28763-disentangling-mixtures-of-unknown-causal-interventions">Video</a> -->
-                  <div id="improving_abstract" class="abstract" style="display:none;">
+                  <div id="controlling_abstract" class="abstract" style="display:none;">
                   </br>
                       <p>
-                        Given a user's input text, text-matching recommender systems output relevant items by comparing the input text to available items' description, such as product-to-product recommendation on e-commerce platforms. As users' interests and item inventory are expected to change, it is important for a text-matching system to generalize to data shifts, a task known as out-of-distribution (OOD) generalization. However, we find that the popular approach of fine-tuning a large, base language model on paired item relevance data (e.g., user clicks) can be counter-productive for OOD generalization. For a product recommendation task, fine-tuning obtains worse accuracy than the base model when recommending items in a new category or for a future time period. To explain this generalization failure, we consider an intervention-based importance metric, which shows that a fine-tuned model captures spurious correlations and fails to learn the causal features that determine the relevance between any two text inputs. Moreover, standard methods for causal regularization do not apply in this setting, because unlike in images, there exist no universally spurious features in a text-matching task (the same token may be spurious or causal depending on the text it is being matched to). For OOD generalization on text inputs, therefore, we highlight a different goal: avoiding high importance scores for certain features. We do so using an intervention-based regularizer that constraints the causal effect of any token on the model's relevance score to be similar to the base model. Results on Amazon product and 3 question recommendation datasets show that our proposed regularizer improves generalization for both in-distribution and OOD evaluation, especially in difficult scenarios when the base model is not accurate.                                   </p>
-                  </div>
+                        To address the problem of NLP classifiers learning spurious correlations between training features and target labels, a common approach is to make the model's predictions invariant to these features. However, this can be counter-productive when the features have a non-zero causal effect on the target label and thus are important for prediction. Therefore, using methods from the causal inference literature, we propose an algorithm to regularize the learnt effect of the features on the model's prediction to the estimated effect of feature on label. This results in an automated augmentation method that leverages the estimated effect of a feature to appropriately change the labels for new augmented inputs. On toxicity and IMDB review datasets, the proposed algorithm minimises spurious correlations and improves the minority group (i.e., samples breaking spurious correlations) accuracy, while also improving the total accuracy compared to standard training.                   </div>
                 </p></li>
                 <!-- </td>
               </tr> -->
